@@ -1,0 +1,16 @@
+body {
+  font-size: 14px;
+  @media screen and (min-width: 768px) {
+    font-size: 16px;
+  }
+  min-height: 100vh;
+  font-family: "Nunito Sans", sans-serif;
+}
+
+.wrapper {
+  padding: 0 5%;
+}
+
+.size-icon {
+  font-size: 1.3rem;
+}
