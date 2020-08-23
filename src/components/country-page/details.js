@@ -1,7 +1,6 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
 import styled from "styled-components";
-import { saveToLocalStorage } from "../../utils/localStorage";
 
 const DetailsStyled = styled.div`
   text-align: left;
@@ -62,7 +61,6 @@ const Details = (props) => {
     fetch(`https://restcountries.eu/rest/v2/alpha/${alpha3Code}`)
       .then((response) => response.json())
       .then((countryInfo) => {
-        saveToLocalStorage("selectedCountryInfo", countryInfo);
         history.push(`/country/${countryInfo.alpha3Code}`);
       })
       .catch((err) => history.push("/"));

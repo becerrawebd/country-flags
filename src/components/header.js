@@ -24,15 +24,20 @@ const SwitchStyled = styled.div`
   cursor: pointer;
 `;
 
-const DarkModeSwitch = ({ isDarkMode, setDarkMode }) => {
+const DarkModeSwitch = ({darkMode,setDarkMode}) => {
+
+  const handleClick = () => {
+    setDarkMode(darkMode ? false : true)
+  }
+
   return (
-    <SwitchStyled onClick={() => setDarkMode(!isDarkMode)}>
-      {isDarkMode ? (
+    <SwitchStyled onClick={handleClick}>
+      {darkMode ? (
         <i className="fas fa-moon size-icon"></i>
       ) : (
         <i className="far fa-moon size-icon"></i>
       )}
-      <strong>{isDarkMode ? "Dark Mode" : "Light Mode"}</strong>
+      <strong>{darkMode ? "Dark Mode" : "Light Mode"}</strong>
     </SwitchStyled>
   );
 };
